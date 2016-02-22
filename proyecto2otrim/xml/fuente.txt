@@ -1,0 +1,1 @@
+http://www.cs.washington.edu/research/xmldatasets/data/mondial/mondial-3.0.xml

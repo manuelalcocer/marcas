@@ -1,0 +1,33 @@
+######
+ Listar información: Hacer un ejercicio que liste cierta información. Por ejemplo, “lista de provincias”,”lista los títulos de libros, año de publicación y precio”,…
+######
+
+1. Listar de los sites de opendata:
+	- Nombre
+	- Autor
+	- País
+	- Descripción
+
+######
+Contar información: Hacer un jercicio que muestre el total de veces que aparece una información. Por ejemplo, “lista de provincias y el total de municipios que tiene cada una”, “¿Cuántos libros hay en la biblioteca?”,”mostrar los libros y el número de autores de cada uno”,…
+######
+
+2. Contar los sites de opendata de un país cualquiera, por ejemplo, Reino Unido, crear un ranking, y decir en qué posición se encuentra.
+
+######
+Buscar o filtrar información: Pedir por teclado uno o varios datos y utilizarlos para hacer una búsqueda, por ejemplo: “Mostrar provincias que empiecen por una subcadena”,”Mostrar lisbos cuyo precio este entre un valor incial y otro final”,…
+######
+
+3. Pedir un país, mostrar la mínima y máxima fecha de ingreso en la lista opendata (metadatacreated), pedir un intervalo válido, y mostrar los sites que cumplan con el requisito
+
+######
+Buscar información relacionada: Es decir me pide buscar una infomación, pero mustra información relacionada a ella. Por ejemplo: “Pide por teclado un autor y muestra los libros que ha escrito”,”Pide un municipio y muestra la provincia a la que pertenece”,…
+######
+
+4. 
+
+#######
+Ejercicio libre, piensa un tipo de ejercicio que sea diferente a los anteriores o una mexcla de alguno de ellos.
+#######
+
+5. Pedir un país medir el área máxima que abarcan sus sites opendata y la densidad de sites que alberga.
