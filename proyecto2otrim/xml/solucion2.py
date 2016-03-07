@@ -14,5 +14,8 @@ for pais in raiz.iter('country'):
     for ciudad in pais.iter('city'):
         if ciudad.attrib['country'] == pais.attrib['id']:
             contador += 1
+            if float(ciudad.attrib['latitude']) > septentrional[0]:
+                septentrional = [round(float(ciudad.attrib['latitude']),2),ciudad.find('name').text.strip()]
             print ciudad.find('name').text.strip()
+    print septentrional
     raw_input('primero')
