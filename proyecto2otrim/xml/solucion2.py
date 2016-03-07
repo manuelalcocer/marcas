@@ -9,13 +9,15 @@ raiz = etree.parse('./mondial-3.0.xml').getroot()
 
 for pais in raiz.iter('country'):
     contador = 0
-    septentrional = [0, '']
-    meridional = [0, '']
+    septentrional = [-90, '']
+    meridional = [90, '']
     for ciudad in pais.iter('city'):
         if ciudad.attrib['country'] == pais.attrib['id']:
             contador += 1
             if float(ciudad.attrib['latitude']) > septentrional[0]:
                 septentrional = [round(float(ciudad.attrib['latitude']),2),ciudad.find('name').text.strip()]
-            print ciudad.find('name').text.strip()
+            if float(ciudad.attrib['latitude']) < meridional[0]:
+                meridional = [round(float(ciudad.attrib['latitude']),2),ciudad.find('name').text.strip()]
     print septentrional
+    print meridional
     raw_input('primero')
