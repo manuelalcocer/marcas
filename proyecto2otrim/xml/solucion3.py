@@ -23,4 +23,4 @@ for pais in raiz.iter('country'):
     except:
         # si no hay datos para calcular la densidad no se hace nada
         pass
-    print densidad
+print densidadmaxima, densidadminima
