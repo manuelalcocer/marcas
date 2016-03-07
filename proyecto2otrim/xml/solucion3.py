@@ -23,4 +23,11 @@ for pais in raiz.iter('country'):
     except:
         # si no hay datos para calcular la densidad no se hace nada
         pass
-print densidadmaxima, densidadminima
+
+print 'Densidad maxima: %f' % densidadmaxima
+print 'Densidad mínima: %f' % densidadminima
+densidad = float(raw_input('Dime una densidad comprendida entre esos valores: '))
+while densidadminima < densidad < densidadmaxima:
+    densidad = float(raw_input('Dime una densidad comprendida entre esos valores: '))
+
+
