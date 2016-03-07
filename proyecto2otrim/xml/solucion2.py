@@ -8,5 +8,8 @@ from lxml import etree
 raiz = etree.parse('./mondial-3.0.xml').getroot()
 
 for pais in raiz.iter('country'):
+    contador = 0
+    septentrional = [0, '']
+    meridional = [0, '']
     for ciudad in pais.iter('city'):
         print ciudad.find('name').text.strip()
