@@ -25,4 +25,4 @@ for idcont,nomcont in continentes.iteritems():
         continenteid = pais.find('encompassed').attrib['continent']
         nombrepais = pais.attrib['name']
         if idcont == continenteid:
-            print 'Nombre continente: %s' % nombrepais
+            print 'Nombre continente: %s - País: %s' % (nomcont,nombrepais)
