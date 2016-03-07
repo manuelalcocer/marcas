@@ -5,14 +5,22 @@
 
 from lxml import etree
 
-densidadmaxima = 0
-densidadminima = 0
-
 raiz = etree.parse('./mondial-3.0.xml').getroot()
 
 for pais in raiz.iter('country'):
     try:
         densidad = round(float(pais.attrib['population'])/float(pais.attrib['total_area']),2)
+        try:
+            if densidad > densidadmaxima:
+                densidadmaxima = densidad
+        except:
+            densidadmaxima = densidad
+        try:
+            if densidad < densidadminima:
+                densidadminima = densidad
+        except:
+            densidadminima = densidad
     except:
-        densidad = 0
+        # si no hay datos para calcular la densidad no se hace nada
+        pass
     print densidad
