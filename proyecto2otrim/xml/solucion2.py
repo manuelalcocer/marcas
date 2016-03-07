@@ -12,4 +12,7 @@ for pais in raiz.iter('country'):
     septentrional = [0, '']
     meridional = [0, '']
     for ciudad in pais.iter('city'):
-        print ciudad.find('name').text.strip()
+        if ciudad.attrib['country'] == pais.attrib['id']:
+            contador += 1
+            print ciudad.find('name').text.strip()
+    raw_input('primero')
