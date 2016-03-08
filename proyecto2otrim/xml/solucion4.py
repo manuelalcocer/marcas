@@ -47,3 +47,11 @@ if len(provincias) > 0:
         print provincia
 else:
     print '\nNo hay provincias'
+
+for religion in pais.iter('religions'):
+    religiones += [ religion.text.strip() ]
+if len(religiones) > 0:
+    print '\nListado de religiones:'
+    print '======================'
+    for religion in religiones:
+        print religion
