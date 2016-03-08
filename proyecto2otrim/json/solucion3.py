@@ -15,7 +15,7 @@ datos_dict = loads(datos)
 paises = []
 for clave in datos_dict.keys():
     separados = datos_dict[clave]['metadatacreated'].split('T')
-    if len(datos_dict[clave]['country']) > 0 and len(datos_dict[clave]['country']) < 3:
+    if 0 < len(datos_dict[clave]['country']) < 4:
         if len(separados[0]) > 0:
             fecha = separados[0].split('-')
             hora = separados[1].split('.')[0].split(':')

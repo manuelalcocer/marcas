@@ -12,9 +12,9 @@ datos_dict = loads(datos)
 
 contadores = {}
 for clave in datos_dict.keys():
-    if datos_dict[clave]['country'].upper() not in contadores:
+    if datos_dict[clave]['country'].upper() not in contadores and 0 < len(datos_dict[clave]['country']) < 4:
         contadores[datos_dict[clave]['country'].upper().strip()] = 1
-    else:
+    elif 0 < len(datos_dict[clave]['country']) < 4:
         contadores[datos_dict[clave]['country'].upper().strip()] += 1
 
 lista_ordenada = []
