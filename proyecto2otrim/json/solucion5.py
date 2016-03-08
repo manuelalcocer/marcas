@@ -36,9 +36,9 @@ while not correcto:
         correcto = True
 
 # p0 = min,min
-# p1 = min,max
-# p2 = max,min
-# p3 = max,max
+# p1 = max,min
+# p2 = max,max
+# p3 = min,max
 print paises[paiselegido][0][1]
 raw_input('lllll')
 p0 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
@@ -54,16 +54,22 @@ for indice in xrange(len(paises[paiselegido])):
     if float(paises[paiselegido][indice][1].split(',')[1]) < p0[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p0[1]:
         p0 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-    if float(paises[paiselegido][indice][1].split(',')[1]) < p1[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p1[1]:
+    if float(paises[paiselegido][indice][1].split(',')[1]) > p1[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p1[1]:
         p1 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-    if float(paises[paiselegido][indice][1].split(',')[1]) > p2[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p2[1]:
+    if float(paises[paiselegido][indice][1].split(',')[1]) > p2[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p2[1]:
         p2 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-    if float(paises[paiselegido][indice][1].split(',')[1]) > p3[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p3[1]:
+    if float(paises[paiselegido][indice][1].split(',')[1]) < p3[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p3[1]:
         p3 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
 print p0
 print p1
 print p2
 print p3
+
+# cálculo por determinante de Gauss
+# Área = 1/2 * (det01 + det12 + det23 + det30)
+
+
+
