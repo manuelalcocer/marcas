@@ -8,19 +8,16 @@ from lxml import etree
 
 raiz = etree.parse('./mondial-3.0.xml').getroot()
 
-paises = []
-for pais in raiz.iter('country'):
-    paises += [ pais.attrib['name'] ]
-
 encontrado = False
 while not encontrado:
     paispedido = raw_input('Dime un país: ')
-    for pais in paises:
-        if pais.lower == paispedido.lower:
+    for pais in raiz.iter('country'):
+        if pais.attrib['name'].lower() == paispedido.lower():
             encontrado = True
+            paispedido = pais
             break
     if not encontrado:
-        for pais in paises:
-            if pais.lower.startswith(paispedido[0]):
-                print pais
-
+        for pais in raiz.iter('country'):
+            if pais.attrib['name'].lower().startswith(paispedido[0]):
+                print pais.attrib['name']
+   
