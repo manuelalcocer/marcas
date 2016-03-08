@@ -16,8 +16,8 @@ paises = []
 for clave in datos_dict.keys():
     separados = datos_dict[clave]['metadatacreated'].split('T')
     if len(separados[0]) > 0:
-        fecha = separados[0]
-        hora = separados[1].split('.')[0]
-        paises += [ [ datos_dict[clave]['country'], [fecha,hora] ] ]
+        fecha = separados[0].split('-')
+        hora = separados[1].split('.')[0].split(':')
+        paises += [ [ datos_dict[clave]['country'], datetime(int(fecha[0]),int(fecha[1]),int(fecha[2]),int(hora[0]),int(hora[1])) ]]
 
 print paises
