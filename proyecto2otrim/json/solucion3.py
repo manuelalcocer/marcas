@@ -34,4 +34,6 @@ print 'Fecha más antigua:', minimo[1]
 print 'Introduce un intervalo con el siguiente formato: DD-MM-YYYY,DD-MM-YYYY'
 intervalo = raw_input('Intervalo: ')
 limites = [ limite.strip() for limite in intervalo.split(',') ]
+limites = [ datetime(int(limite.split('-')[2]),int(limite.split('-')[1]),int(limite.split('-')[0])) for limite in limites ]
 print limites
+
