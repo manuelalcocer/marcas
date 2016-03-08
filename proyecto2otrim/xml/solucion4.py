@@ -20,4 +20,11 @@ while not encontrado:
         for pais in raiz.iter('country'):
             if pais.attrib['name'].lower().startswith(paispedido[0]):
                 print pais.attrib['name']
-   
+
+capital = pais.attrib['capital']
+ciudades = []
+provincias = []
+religiones = []
+
+for ciudad in pais.iter('city'):
+   pass 
