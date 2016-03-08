@@ -28,5 +28,6 @@ for pais in contadores.keys():
     if not insertado:
         lista_ordenada.append([pais,contadores[pais]])
 
-print lista_ordenada
+for pais in lista_ordenada:
+    print pais[0],pais[1]
 eleccion = raw_input('\nDime un pais de la lista: ')
