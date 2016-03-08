@@ -28,5 +28,10 @@ for pais in paises:
         maximo = pais
     if pais[1] < minimo[1]:
         minimo = pais
-print maximo
-print minimo
+print 'Fecha más actual:', maximo[1]
+print 'Fecha más antigua:', minimo[1]
+
+print 'Introduce un intervalo con el siguiente formato: DD-MM-YYYY,DD-MM-YYYY'
+intervalo = raw_input('Intervalo: ')
+limites = [ limite.strip() for limite in intervalo.split(',') ]
+print limites
