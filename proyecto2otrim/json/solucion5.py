@@ -39,8 +39,6 @@ while not correcto:
 # p1 = max,min
 # p2 = max,max
 # p3 = min,max
-print paises[paiselegido]
-raw_input('lllll')
 puntos = [[],[],[],[]]
 puntos[0] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
 puntos[0] = [puntos[0][1],puntos[0][0]]
@@ -50,9 +48,7 @@ puntos[2] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].spli
 puntos[2] = [puntos[2][1],puntos[2][0]]
 puntos[3] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
 puntos[3] = [puntos[3][1],puntos[3][0]]
-print len(paises[paiselegido])
 for indice in xrange(len(paises[paiselegido])):
-    print indice
     if float(paises[paiselegido][indice][1].split(',')[1]) < puntos[0][0] and float(paises[paiselegido][indice][1].split(',')[0]) < puntos[0][1]:
         puntos[0] = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
@@ -73,12 +69,16 @@ for indice in xrange(len(paises[paiselegido])):
 # suma de determinantes
 sumatorio = 0
 for indice in xrange(len(puntos)):
-    sumatorio += (puntos[indice%4][0]*puntos[(indice+1)%4][0] - puntos[indice%4][1]*puntos[(indice+1)%4])
+    x1 = puntos[indice%4][0]
+    y1 = puntos[indice%4][1]
+    x2 = puntos[(indice+1)%4][0]
+    y2 = puntos[(indice+1)%4][1]
+    sumatorio += (x1 * y2 - x2 * y1)
 
 area = sumatorio * 0.5
 areakm2 = area*(3.1416*6371/180)**2
-print areakm2
-
+densidad = len(paises[paiselegido]) / areakm2 
+print 'El area es que abarcan las sites es: %.2f km² y la densidad es: %.4f sites/km²' %(areakm2,densidad)
 
 
 
