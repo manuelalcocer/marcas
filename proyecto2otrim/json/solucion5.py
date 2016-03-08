@@ -14,12 +14,27 @@ with open('./opendata.json') as archivo:
     datos = archivo.read()
 
 datos_dict = loads(datos)
-paises = []
+paises = {}
 for clave in datos_dict.keys():
-    if 0 < len(datos_dict[clave]['country']) < 3:
-        paises += [ datos_dict[clave]['country'] ]
+    if datos_dict[clave]['country'].upper() not in paises and 0 < len(datos_dict[clave]['country']) < 3:
+        paises[datos_dict[clave]['country'].upper()] = []
+    if 0 < len(datos_dict[clave]['country']) < 3 and len(datos_dict[clave]['location']) > 2:
+        print 'lllll'
+        paises[datos_dict[clave]['country'].upper()].append([datos_dict[clave]['country'].upper(), datos_dict[clave]['location'],datos_dict[clave]['url']])
 
 print '\nListado de paises disponibles:\n'
-for pais in paises:
-    print pais,
+for clave in paises.keys():
+    print clave, paises[clave],
+
+correcto = False
+while not correcto:
+    paiselegido = raw_input('\nElige un país de la lista:')
+    if paiselegido.upper() in paises:
+        correcto = True
+
+# p0 = min,min
+# p1 = min,max
+# p2 = max,min
+# p3 = max,max
+
 
