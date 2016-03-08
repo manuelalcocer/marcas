@@ -68,6 +68,18 @@ for indice in xrange(len(paises[paiselegido])):
 
 # cálculo por determinante de Gauss
 # Área = 1/2 * (det01 + det12 + det23 + det30)
+# Area en km = Area * 111^2 km^2
+
+# suma de determinantes
+sumatorio = 0
+for indice in xrange(len(puntos)):
+    sumatorio += (puntos[indice%4][0]*puntos[(indice+1)%4][0] - puntos[indice%4][1]*puntos[(indice+1)%4])
+
+area = sumatorio * 0.5
+areakm2 = area*(3.1416*6371/180)**2
+print areakm2
+
+
 
 
 
