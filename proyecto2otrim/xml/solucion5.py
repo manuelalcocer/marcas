@@ -37,7 +37,10 @@ for ciudad_a in ciudades_a:
                 distancia = calculo_modulo
         except:
             pass
-print pareja_de_ciudades
+
+print '\nCiudades más alejadas: '
+print '======================'
+print pareja_de_ciudades[0], '-', pareja_de_ciudades[1]
 
 
 
