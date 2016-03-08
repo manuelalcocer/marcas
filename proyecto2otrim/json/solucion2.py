@@ -30,4 +30,14 @@ for pais in contadores.keys():
 
 for pais in lista_ordenada:
     print pais[0],pais[1]
-eleccion = raw_input('\nDime un pais de la lista: ')
+
+eleccion = raw_input('\nDime un pais de la lista: ').upper()
+for elemento in lista_ordenada:
+    if eleccion in elemento:
+        posicion = lista_ordenada.index(elemento)+1
+        encontrado = True
+        break
+if encontrado:
+    print '%s está en la posición: %d' %(eleccion,posicion)
+else:
+    print 'No se encuentra'
