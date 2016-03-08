@@ -15,13 +15,14 @@ datos_dict = loads(datos)
 paises = []
 for clave in datos_dict.keys():
     separados = datos_dict[clave]['metadatacreated'].split('T')
-    if len(separados[0]) > 0:
-        fecha = separados[0].split('-')
-        hora = separados[1].split('.')[0].split(':')
-        paises += [ [datos_dict[clave]['country'], datetime(int(fecha[0]),int(fecha[1]),int(fecha[2]),int(hora[0]),int(hora[1]))] ]
+    if len(datos_dict[clave]['country']) > 0 and len(datos_dict[clave]['country']) < 3:
+        if len(separados[0]) > 0:
+            fecha = separados[0].split('-')
+            hora = separados[1].split('.')[0].split(':')
+            paises += [ [datos_dict[clave]['country'], datetime(int(fecha[0]),int(fecha[1]),int(fecha[2]),int(hora[0]),int(hora[1]))] ]
 
-maximo = [ paises[0] ]
-minimo = [ paises[0] ]
+maximo = paises[0]
+minimo = paises[0]
 for pais in paises:
     if pais[1] > maximo[1]:
         maximo = pais
