@@ -27,4 +27,6 @@ provincias = []
 religiones = []
 
 for ciudad in pais.iter('city'):
-   pass 
+    if ciudad.attrib['id'] == capital:
+        capital = ciudad.find('name').text.strip()
+print capital
