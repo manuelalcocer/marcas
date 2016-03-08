@@ -18,7 +18,7 @@ paises = {}
 for clave in datos_dict.keys():
     if datos_dict[clave]['country'].upper() not in paises and 0 < len(datos_dict[clave]['country']) < 3:
         paises[datos_dict[clave]['country'].upper()] = []
-    if 0 < len(datos_dict[clave]['country']) < 3 and len(datos_dict[clave]['location']) > 2:
+    if 0 < len(datos_dict[clave]['country']) < 3 and len(datos_dict[clave]['location']) > 4:
         paises[datos_dict[clave]['country'].upper()].append([datos_dict[clave]['country'].upper(), datos_dict[clave]['location'],datos_dict[clave]['url']])
 
 # Para el ejercicio solo tiene en cuentan los paises que tienen al menos 4 sites de opendata en la lista
@@ -39,37 +39,36 @@ while not correcto:
 # p1 = max,min
 # p2 = max,max
 # p3 = min,max
-print paises[paiselegido][0][1]
+print paises[paiselegido]
 raw_input('lllll')
-p0 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
-p0 = [p0[1],p0[0]]
-p1 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
-p1 = [p0[1],p0[0]]
-p2 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
-p2 = [p0[1],p0[0]]
-p3 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
-p3 = [p0[1],p0[0]]
+puntos = [[],[],[],[]]
+puntos[0] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+puntos[0] = [puntos[0][1],puntos[0][0]]
+puntos[1] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+puntos[1] = [puntos[1][1],puntos[1][0]]
+puntos[2] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+puntos[2] = [puntos[2][1],puntos[2][0]]
+puntos[3] = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+puntos[3] = [puntos[3][1],puntos[3][0]]
+print len(paises[paiselegido])
 for indice in xrange(len(paises[paiselegido])):
     print indice
-    if float(paises[paiselegido][indice][1].split(',')[1]) < p0[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p0[1]:
-        p0 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+    if float(paises[paiselegido][indice][1].split(',')[1]) < puntos[0][0] and float(paises[paiselegido][indice][1].split(',')[0]) < puntos[0][1]:
+        puntos[0] = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-    if float(paises[paiselegido][indice][1].split(',')[1]) > p1[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p1[1]:
-        p1 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+    if float(paises[paiselegido][indice][1].split(',')[1]) > puntos[1][0] and float(paises[paiselegido][indice][1].split(',')[0]) < puntos[1][1]:
+        puntos[1] = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-    if float(paises[paiselegido][indice][1].split(',')[1]) > p2[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p2[1]:
-        p2 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+    if float(paises[paiselegido][indice][1].split(',')[1]) > puntos[2][0] and float(paises[paiselegido][indice][1].split(',')[0]) > puntos[2][1]:
+        puntos[2] = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-    if float(paises[paiselegido][indice][1].split(',')[1]) < p3[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p3[1]:
-        p3 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+    if float(paises[paiselegido][indice][1].split(',')[1]) < puntos[3][0] and float(paises[paiselegido][indice][1].split(',')[0]) > puntos[3][1]:
+        puntos[3] = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-print p0
-print p1
-print p2
-print p3
 
 # cálculo por determinante de Gauss
 # Área = 1/2 * (det01 + det12 + det23 + det30)
+
 
 
 
