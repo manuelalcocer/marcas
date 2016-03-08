@@ -21,11 +21,12 @@ lista_ordenada = []
 for pais in contadores.keys():
     insertado = False
     for posicion in xrange(len(lista_ordenada)):
-        if contadores[pais] >= lista_ordenada[posicion]:
-            lista_ordenada.insert({pais:contadores[pais]})
+        if contadores[pais] >= lista_ordenada[posicion][1]:
+            lista_ordenada.insert(posicion,[pais,contadores[pais]])
             insertado = True
             break
     if not insertado:
-        lista_ordenada.append({pais:contadores[pais]})
+        lista_ordenada.append([pais,contadores[pais]])
+
 print lista_ordenada
 eleccion = raw_input('\nDime un pais de la lista: ')
