@@ -29,4 +29,21 @@ religiones = []
 for ciudad in pais.iter('city'):
     if ciudad.attrib['id'] == capital:
         capital = ciudad.find('name').text.strip()
-print capital
+    ciudades += [ ciudad.find('name').text.strip() ]
+print '\nCapital: %s' % capital
+print '\nCiudades:'
+print '========='
+for ciudad in ciudades:
+    print ciudad
+
+provincias = []
+for provincia in pais.iter('province'):
+    provincias += [ provincia.attrib['name'] ]
+
+if len(provincias) > 0:
+    print '\nListado de provincias:'
+    print '======================'
+    for provincia in provincias:
+        print provincia
+else:
+    print '\nNo hay provincias'
