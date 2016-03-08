@@ -35,5 +35,10 @@ print 'Introduce un intervalo con el siguiente formato: DD-MM-YYYY,DD-MM-YYYY'
 intervalo = raw_input('Intervalo: ')
 limites = [ limite.strip() for limite in intervalo.split(',') ]
 limites = [ datetime(int(limite.split('-')[2]),int(limite.split('-')[1]),int(limite.split('-')[0])) for limite in limites ]
-print limites
 
+if limites[0] > limites[1]:
+    limites = [limites[1],limites[0]]
+
+for pais in paises:
+    if limites[0] <= pais[1] <= limites[1]:
+        print pais[0], pais[1], limites
