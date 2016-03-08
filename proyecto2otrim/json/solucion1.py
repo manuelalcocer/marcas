@@ -14,7 +14,8 @@ with open('./opendata.json') as archivo:
 datos_dict = loads(datos)
 
 for clave in datos_dict.keys():
-    print '\n\nNombre: ', datos_dict[clave]['name']
-    print '\tAutor: ', datos_dict[clave]['author']
-    print '\tPaís: ', datos_dict[clave]['country']
-    print '\tDescripción:', datos_dict[clave]['description']
+    print '\n\nNombre:', datos_dict[clave]['name']
+    print   '\tURL:        ', datos_dict[clave]['url']
+    print   '\tAutor:      ', datos_dict[clave]['author']
+    print   '\tPaís:       ', datos_dict[clave]['country']
+    print   '\tDescripción:', datos_dict[clave]['description']
