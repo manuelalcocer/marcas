@@ -39,20 +39,7 @@ while not correcto:
 # p1 = min,max
 # p2 = max,min
 # p3 = max,max
-if len(paises[paiselegido]) == 3:
-    p0 = float(paises[paiselegido][1].split(','))
-    p0 = [p0[1],p0[0]]
-    p1 = float(paises[paiselegido][1].split(','))
-    p1 = [p1[1],p1[0]]
-    p2 = float(paises[paiselegido][1].split(','))
-    p2 = [p2[1],p2[0]]
-    for site in paises[paiselegido]:
-        if float(paises[paiselegido][1].split(',')[1]) < p0[0] and float(paises[paiselegido][1].split(',')[0]) < p0[1]:
-            p0 = [float(paises[paiselegido][1].split(',')[1]),float(paises[paiselegido][1].split(',')[0]) < p0[1]]
-        elif float(paises[paiselegido][1].split(',')[1]) < p0[0] and float(paises[paiselegido][1].split(',')[0]) < p0[1]:
-            p0 = [float(paises[paiselegido][1].split(',')[1]),float(paises[paiselegido][1].split(',')[0]) < p0[1]]
 
-            pass
 p0 = float(paises[paiselegido][1].split(','))
 p0 = [p0[1],p0[0]]
 p1 = paises[paiselegido][1].split(',')
@@ -61,3 +48,8 @@ p2 = paises[paiselegido][1].split(',')
 p0 = [p0[1],p0[0]]
 p3 = paises[paiselegido][1].split(',')
 p0 = [p0[1],p0[0]]
+for site in paises[paiselegido]:
+    if float(paises[paiselegido][1].split(',')[1]) < p0[0] and float(paises[paiselegido][1].split(',')[0]) < p0[1]:
+        p0 = [float(paises[paiselegido][1].split(',')[1]),float(paises[paiselegido][1].split(',')[0]) < p0[1]]
+    elif float(paises[paiselegido][1].split(',')[1]) < p0[0] and float(paises[paiselegido][1].split(',')[0]) < p0[1]:
+        p0 = [float(paises[paiselegido][1].split(',')[1]),float(paises[paiselegido][1].split(',')[0]) < p0[1]]
