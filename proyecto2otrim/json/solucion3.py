@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
-# 2. Contar los sites de opendata de un país cualquiera, por ejemplo, Reino Unido, crear un ranking, y decir en qué posición se encuentra.
+# 3. Pedir un país, mostrar la mínima y máxima fecha de ingreso en la lista opendata (metadatacreated), pedir un intervalo válido, y mostrar los sites que cumplan con el requisito
 
 from json import loads
 
