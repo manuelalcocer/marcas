@@ -28,17 +28,21 @@ for pais in paises:
         maximo = pais
     if pais[1] < minimo[1]:
         minimo = pais
-print 'Fecha más actual:', maximo[1]
+print '\nFecha más actual:', maximo[1]
 print 'Fecha más antigua:', minimo[1]
 
-print 'Introduce un intervalo con el siguiente formato: DD-MM-YYYY,DD-MM-YYYY'
-intervalo = raw_input('Intervalo: ')
-limites = [ limite.strip() for limite in intervalo.split(',') ]
-limites = [ datetime(int(limite.split('-')[2]),int(limite.split('-')[1]),int(limite.split('-')[0])) for limite in limites ]
-
-if limites[0] > limites[1]:
-    limites = [limites[1],limites[0]]
-
+print '\nIntroduce un intervalo con el siguiente formato: DD-MM-YYYY,DD-MM-YYYY'
+correcto = False
+while not correcto:
+    intervalo = raw_input('Intervalo: ')
+    limites = [ limite.strip() for limite in intervalo.split(',') ]
+    limites = [ datetime(int(limite.split('-')[2]),int(limite.split('-')[1]),int(limite.split('-')[0])) for limite in limites ]
+    if limites[0] > limites[1]:
+        limites = [limites[1],limites[0]]
+    if limites[0] >= minimo[1] and limites[1] <= maximo[1]:
+        correcto = True
+print '\nPaises dentro del intervalo: '
 for pais in paises:
     if limites[0] <= pais[1] <= limites[1]:
-        print pais[0], pais[1], limites
+        print '%s : %s' % (pais[0], pais[1])
+print 'Esos países estan dentro del intervalo: %s %s' %(limites[0],limites[1])
