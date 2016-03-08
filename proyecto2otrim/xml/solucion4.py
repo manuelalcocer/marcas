@@ -23,9 +23,6 @@ while not encontrado:
 
 capital = pais.attrib['capital']
 ciudades = []
-provincias = []
-religiones = []
-
 for ciudad in pais.iter('city'):
     if ciudad.attrib['id'] == capital:
         capital = ciudad.find('name').text.strip()
@@ -48,6 +45,7 @@ if len(provincias) > 0:
 else:
     print '\nNo hay provincias'
 
+religiones = []
 for religion in pais.iter('religions'):
     religiones += [ religion.text.strip() ]
 if len(religiones) > 0:
