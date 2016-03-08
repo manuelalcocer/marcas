@@ -24,7 +24,7 @@ Buscar o filtrar información: Pedir por teclado uno o varios datos y utilizarlo
 Buscar información relacionada: Es decir me pide buscar una infomación, pero mustra información relacionada a ella. Por ejemplo: “Pide por teclado un autor y muestra los libros que ha escrito”,”Pide un municipio y muestra la provincia a la que pertenece”,…
 ######
 
-4. 
+4. Pedir una url y decir si está activa 
 
 #######
 Ejercicio libre, piensa un tipo de ejercicio que sea diferente a los anteriores o una mexcla de alguno de ellos.
