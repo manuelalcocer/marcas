@@ -18,6 +18,14 @@ for clave in datos_dict.keys():
     if len(separados[0]) > 0:
         fecha = separados[0].split('-')
         hora = separados[1].split('.')[0].split(':')
-        paises += [ [ datos_dict[clave]['country'], datetime(int(fecha[0]),int(fecha[1]),int(fecha[2]),int(hora[0]),int(hora[1])) ]]
+        paises += [ [datos_dict[clave]['country'], datetime(int(fecha[0]),int(fecha[1]),int(fecha[2]),int(hora[0]),int(hora[1]))] ]
 
-print paises
+maximo = [ paises[0] ]
+minimo = [ paises[0] ]
+for pais in paises:
+    if pais[1] > maximo[1]:
+        maximo = pais
+    if pais[1] < minimo[1]:
+        minimo = pais
+print maximo
+print minimo
