@@ -39,17 +39,31 @@ while not correcto:
 # p1 = min,max
 # p2 = max,min
 # p3 = max,max
+print paises[paiselegido][0][1]
+raw_input('lllll')
+p0 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+p0 = [p0[1],p0[0]]
+p1 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+p1 = [p0[1],p0[0]]
+p2 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+p2 = [p0[1],p0[0]]
+p3 = [ float(coordenada) for coordenada in paises[paiselegido][0][1].split(',') ]
+p3 = [p0[1],p0[0]]
+for indice in xrange(len(paises[paiselegido])):
+    print indice
+    if float(paises[paiselegido][indice][1].split(',')[1]) < p0[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p0[1]:
+        p0 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
 
-p0 = float(paises[paiselegido][1].split(','))
-p0 = [p0[1],p0[0]]
-p1 = paises[paiselegido][1].split(',')
-p0 = [p0[1],p0[0]]
-p2 = paises[paiselegido][1].split(',')
-p0 = [p0[1],p0[0]]
-p3 = paises[paiselegido][1].split(',')
-p0 = [p0[1],p0[0]]
-for site in paises[paiselegido]:
-    if float(paises[paiselegido][1].split(',')[1]) < p0[0] and float(paises[paiselegido][1].split(',')[0]) < p0[1]:
-        p0 = [float(paises[paiselegido][1].split(',')[1]),float(paises[paiselegido][1].split(',')[0]) < p0[1]]
-    elif float(paises[paiselegido][1].split(',')[1]) < p0[0] and float(paises[paiselegido][1].split(',')[0]) < p0[1]:
-        p0 = [float(paises[paiselegido][1].split(',')[1]),float(paises[paiselegido][1].split(',')[0]) < p0[1]]
+    if float(paises[paiselegido][indice][1].split(',')[1]) < p1[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p1[1]:
+        p1 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+
+    if float(paises[paiselegido][indice][1].split(',')[1]) > p2[0] and float(paises[paiselegido][indice][1].split(',')[0]) < p2[1]:
+        p2 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+
+    if float(paises[paiselegido][indice][1].split(',')[1]) > p3[0] and float(paises[paiselegido][indice][1].split(',')[0]) > p3[1]:
+        p3 = [float(paises[paiselegido][indice][1].split(',')[1]),float(paises[paiselegido][indice][1].split(',')[0])]
+
+print p0
+print p1
+print p2
+print p3
